@@ -4,7 +4,7 @@ Reproducibility materials for the manuscript **“Reaction-Center-Guided Reranki
 
 ## Overview
 
-This repository contains the study-specific code, evaluation scripts, reviewer-requested statistical analyses, and compact derived results used in the manuscript.
+This repository contains study-specific code, compact reproducibility materials, reviewer-requested statistical analyses, and derived results used in the manuscript.
 
 The workflow combines:
 
@@ -13,7 +13,7 @@ The workflow combines:
 3. candidate-level reaction-center consistency descriptors,
 4. a logistic reranker that fuses Transformer and GNN-derived features.
 
-The starting corpus is the public LocalMapper-remapped USPTO-50K release. After study-specific filtering and reconciliation, **47,517 reactions** were retained and assigned to record-disjoint train/validation/test splits:
+The starting corpus is the public LocalMapper-remapped USPTO-50K release. After study-specific filtering and reconciliation, **47,517 reactions** were retained in record-disjoint splits:
 
 - Train: **38,013**
 - Validation: **4,751**
@@ -45,7 +45,10 @@ Direct paired comparison of Transformer-only vs Transformer+GNN:
 - recovered reactions: **91**
 - harmed reactions: **14**
 - exact two-sided McNemar p-value: **5.32 × 10⁻15**
-- 10,000-resample paired-bootstrap 95% CI for gain: **+1.20 to +2.04 percentage points**
+- 10,000-resample paired-bootstrap 95% CI: **+1.20 to +2.04 percentage points**
+
+The compact reaction-level paired outcomes required to reproduce these statistics are included in
+`results/reviewer1_major4_paired_outcomes.json`.
 
 ## Reviewer-requested state-only reaction-center audit
 
@@ -59,23 +62,25 @@ The original bond-only definition yielded 7,503 reactions without a bond-defined
 - Formal-charge change: 22/100
 - Chirality change: 1/100
 
-The detailed reaction-level audit is provided in `results/Supplementary_Table_S1_State_Only_Reaction_Audit.csv`.
+The reaction-level audit is included in
+`results/Supplementary_Table_S1_State_Only_Reaction_Audit.csv`.
 
 ## Repository structure
 
-- `notebooks/reaction_center_guided_reranking.ipynb` — complete development/evaluation notebook used for the study
-- `analysis/figure4_roc_pr_confusion.py` — publication-quality ROC, PR, and confusion-matrix figure
-- `analysis/reviewer1_major2_state_only_audit.py` — reproducible state-only reaction-center audit
-- `analysis/reviewer1_major4_paired_statistics.py` — paired McNemar and bootstrap analysis
-- `results/` — compact final tables and JSON summaries
+- `notebooks/reaction_center_guided_reranking.ipynb` — compact reproducibility notebook
+- `analysis/figure4_roc_pr_confusion.py` — ROC, precision-recall, and confusion-matrix figure utility
+- `analysis/reviewer1_major2_state_only_audit.py` — state-only reaction-center audit
+- `analysis/reviewer1_major4_paired_statistics.py` — exact McNemar and paired-bootstrap analysis
+- `models/final_rerankers_validation_trained.joblib` — frozen validation-trained rerankers
+- `results/` — final tables, summaries, reviewer analyses, and supplementary audit data
 - `data/README.md` — data-source and large-file notes
-- `requirements.txt` — Python dependencies
+- `requirements.txt` — main Python dependencies
 
 ## Reproducibility notes
 
-Large source/intermediate datasets and PyTorch graph tensors are not duplicated in this GitHub repository. They can be regenerated from the public starting corpus using the notebook and scripts. The repository contains compact derived tables required to verify the principal numerical claims reported in the manuscript.
+Large source/intermediate datasets and PyTorch graph tensors are intentionally not duplicated in GitHub. The public starting corpus is cited in the manuscript, and the repository provides the code, compact retained results, and reviewer-requested reaction-level audit/statistical material needed to verify the principal reported numerical claims.
 
-The final evaluation uses a validation-selected threshold that is frozen before held-out test evaluation. Test results are not used for threshold tuning or reranker fitting.
+The final GNN classification threshold was selected on validation data and frozen before held-out test evaluation. Test results were not used for threshold tuning or reranker fitting.
 
 ## Environment
 
@@ -88,6 +93,10 @@ Install the main dependencies with:
 ## Data availability
 
 The starting reaction corpus is the public LocalMapper-remapped USPTO-50K release cited in the manuscript. Large source and processed datasets are not redistributed here.
+
+## Repository URL
+
+https://github.com/Jaloliddin6565/reaction-center-guided-reranking
 
 ## Citation
 
