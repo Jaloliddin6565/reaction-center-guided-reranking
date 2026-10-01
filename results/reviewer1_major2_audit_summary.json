@@ -1,0 +1,16 @@
+{
+  "state_only_pool": 7503,
+  "sample_size": 100,
+  "random_seed": 42,
+  "parse_success": 100,
+  "structural_support": 100,
+  "heavy_atom_support": 100,
+  "audit_class_counts": {"STRUCTURALLY_SUPPORTED": 100},
+  "property_counts": {
+    "degree": 100,
+    "hybridization": 44,
+    "total_h": 100,
+    "formal_charge": 22,
+    "chiral_tag": 1
+  }
+}

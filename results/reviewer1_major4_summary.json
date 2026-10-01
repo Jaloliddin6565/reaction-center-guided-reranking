@@ -1,0 +1,17 @@
+{
+  "test_reactions": 4753,
+  "transformer_only_correct": 1604,
+  "transformer_only_top1_pct": 33.74710709025878,
+  "combined_correct": 1681,
+  "combined_top1_pct": 35.36713654533978,
+  "absolute_gain_pp": 1.6200294550810028,
+  "recovered": 91,
+  "harmed": 14,
+  "net_gain": 77,
+  "discordant_pairs": 105,
+  "mcnemar_exact_p": 5.322015987015649e-15,
+  "bootstrap_iterations": 10000,
+  "gain_95ci_lower_pp": 1.1992425836313895,
+  "gain_95ci_upper_pp": 2.0408163265306114,
+  "random_seed": 42
+}

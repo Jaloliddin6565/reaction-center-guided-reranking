@@ -1,0 +1,36 @@
+{
+  "model": "Leakage-free product-conditioned ReactionCenterGNN v2",
+  "best_epoch": 25,
+  "validation": {
+    "ap": 0.95451459457088,
+    "auc": 0.9973464550696971,
+    "loss": 0.13141887868566718,
+    "selected_threshold": 0.9574271440505981,
+    "threshold_precision": 0.9068069572686279,
+    "threshold_recall": 0.8819045630155581,
+    "threshold_f1": 0.8941824149060692,
+    "reaction_exact_accuracy": 0.7009050726162913
+  },
+  "test": {
+    "n_reactions": 4753,
+    "n_atoms": 203246,
+    "n_rc_atoms": 9630,
+    "average_precision": 0.9556204420067972,
+    "roc_auc": 0.9971160105542971,
+    "threshold": 0.9574271440505981,
+    "precision": 0.9084142394822007,
+    "recall": 0.8744548286604361,
+    "f1": 0.8911111111111111,
+    "mcc": 0.8859802143580032,
+    "tn": 192767,
+    "fp": 849,
+    "fn": 1209,
+    "tp": 8421,
+    "reaction_exact_accuracy": 0.6964022722491058,
+    "reaction_macro_precision": 0.9096127257972408,
+    "reaction_macro_recall": 0.8890762392340344,
+    "default_05_precision": 0.6923644411656216,
+    "default_05_recall": 0.9745586708203531,
+    "default_05_f1": 0.8095751563510891
+  }
+}

@@ -1,0 +1,5 @@
+Configuration,Top-1 (%),Top-3 (%),Δ Top-1 (pp),Recovered,Harmed,Net gain
+Transformer Beam,32.99,45.34,0.0,0,0,0
+Transformer-only reranker,33.75,45.97,0.76,36,0,36
+GNN-only reranker,17.86,41.93,-15.13,295,1014,-719
+Transformer + GNN reranker,35.37,46.52,2.38,127,14,113

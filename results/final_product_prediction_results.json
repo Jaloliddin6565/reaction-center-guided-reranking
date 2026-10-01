@@ -1,0 +1,23 @@
+{
+  "test_reactions": 4753,
+  "oracle_top5_pct": 48.89543446244477,
+  "baseline": {"top1_pct": 32.98969072164948, "top3_pct": 45.33978539869556, "correct_reactions": 1568},
+  "transformer_only_reranker": {"top1_pct": 33.74710709025878, "top3_pct": 45.97096570586998},
+  "gnn_only_reranker": {"top1_pct": 17.86240269303598},
+  "combined_reranker": {
+    "top1_pct": 35.36713654533978,
+    "top3_pct": 46.517988638754474,
+    "correct_reactions": 1681,
+    "recovered": 127,
+    "harmed": 14,
+    "net_gain": 113,
+    "absolute_gain_pp": 2.3774458236902998,
+    "relative_gain_pct": 7.206632653061221
+  },
+  "statistics": {
+    "mcnemar_exact_p": 5.815315210521221e-24,
+    "bootstrap_iterations": 10000,
+    "gain_95ci_lower_pp": 1.8935409215232513,
+    "gain_95ci_upper_pp": 2.88239006942983
+  }
+}
